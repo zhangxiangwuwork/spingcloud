@@ -6,7 +6,7 @@ spring:
         service-id: config-server
       name: order-service
       profile: dev
-      overide-none: true
+      overide-none: true  
 
   
 eureka:
