@@ -7,20 +7,27 @@ spring:
       name: item-service
       profile: dev
       overide-none: true
+
+eureka: 
+  client: 
+    service-url: 
+      defaultZone: http://eureka1:2001/eureka, http://eureka2:2002/eureka
+      
   
-eureka:   client:     service-url:       defaultZone: http://eureka1:2001/eureka, http://eureka2:2002/eureka
-      
-      
-      
 ---
 server:
   port: 8001
   
 
-spring:  profiles:  - item1
+spring:
+  profiles:
+  - item1
   
 
 ---
-server:  port: 8002
+server:
+  port: 8002
   
-spring:  profiles:  - item2
+spring:
+  profiles:
+  - item2
