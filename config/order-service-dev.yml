@@ -1,17 +1,21 @@
-spring: 
+spring:
+  application:
+    name: order-service
   cloud:
     config:
-      discovery:
-        enabled: true
-        service-id: config-server
-      name: order-service
-      profile: dev
-      overide-none: true  
+      override-none: true
+#  rabbitmq:
+#    host: 192.168.64.140
+#    port: 5672
+#    username: admin
+#    password: admin
 
+server:
+  port: 8201  
   
-eureka: 
-  client: 
-    service-url: 
+eureka:
+  client:
+    service-url:
       defaultZone: http://eureka1:2001/eureka, http://eureka2:2002/eureka
       
 feign:
@@ -23,20 +27,3 @@ management:
     web:
       exposure:
         include: hystrix.stream
-      
----
-server:
-  port: 8201
-  
-spring:
-  profiles:
-  - order1
-  
-  
----
-server:
-  port: 8202
-  
-spring:
-  profiles:
-  - order2
