@@ -3,15 +3,10 @@ spring:
     name: order-service
   cloud:
     config:
-      override-none: true
-#  rabbitmq:
-#    host: 192.168.64.140
-#    port: 5672
-#    username: admin
-#    password: admin
-
-server:
-  port: 8201  
+      override-none: true 
+# server:
+#  port: 8201
+  
   
 eureka:
   client:
@@ -27,3 +22,17 @@ management:
     web:
       exposure:
         include: hystrix.stream
+        
+---
+spring:
+  profiles: order1
+  
+server:
+  port: 8201
+  
+---
+spring:
+  profiles: order2
+  
+server:
+  port: 8202

@@ -1,29 +1,49 @@
-sp:
-  user-service:
-    users: "[{\"id\":7, \"username\":\"abc\",\"password\":\"123\"},{\"id\":8, \"username\":\"def\",\"password\":\"456\"},{\"id\":9, \"username\":\"ghi\",\"password\":\"789\"},{\"id\":99, \"username\":\"aaa\",\"password\":\"111\"}]"
-    
+sp: 
+  user-service: 
+    users: "[{\"id\":7, \"username\":\"abc\",\"password\":\"123\"},{\"id\":8, \"username\":\"def\",\"password\":\"456\"},{\"id\":9, \"username\":\"ghi\",\"password\":\"789\"}]"
+
 spring:
   application:
     name: user-service
   cloud:
     config:
-      override-none: true
-#  rabbitmq:
-#    host: 192.168.64.140
-#    port: 5672
-#    username: admin
-#    password: admin
-
+      override-none: true 
+eureka: 
+  client: 
+    service-url: 
+      defaultZone: http://eureka1:2001/eureka, http://eureka2:2002/eureka
+      
+      
+      
+      
+      
+---
 server:
   port: 8101
   
-eureka:
-  client:
-    service-url:
-      defaultZone: http://eureka1:2001/eureka, http://eureka2:2002/eureka  
-
-management:
-  endpoints:
-    web:
-      exposure:
-        include: refresh
+spring:
+  profiles:
+  - user1
+  
+---
+server:
+  port: 8102
+  
+  
+spring:
+  profiles:
+  - user2
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
