@@ -10,7 +10,7 @@ spring:
         service-id: config-server
       name: user-service
       profile: dev
-    
+      overide-none: true
   
 eureka:
   client:

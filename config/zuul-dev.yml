@@ -6,7 +6,8 @@ spring:
         service-id: config-server
       name: zuul
       profile: dev
-    
+      overide-none: true
+      
 server:
   port: 3001
   
